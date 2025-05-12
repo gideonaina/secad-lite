@@ -9,3 +9,4 @@ down:
 
 nuke:
     docker compose -f secad.docker-compose.yml down -v
+    docker volume rm $(docker volume ls -q)
