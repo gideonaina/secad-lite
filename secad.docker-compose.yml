@@ -1,0 +1,35 @@
+services:
+  secad:
+    build:
+      context: .
+      dockerfile: app.Dockerfile
+    restart: unless-stopped
+    ports:
+      - "8501:8501"
+    env_file:
+      - ./.env
+    depends_on:
+      - vector-db
+  
+  vector-db:
+    build:
+      context: .
+      dockerfile: db.Dockerfile
+    environment:
+      POSTGRES_USER: langflow
+      POSTGRES_PASSWORD: langflow
+      POSTGRES_DB: langflow
+      LANG: en_US.utf8
+      LANGUAGE: en_US:en
+      LC_ALL: en_US.utf8
+    ports:
+      - "5432:5432"
+    # volumes:
+    #   - ./initdb:/docker-entrypoint-initdb.d
+    networks:
+      - ragnet
+
+networks:
+  ragnet:
+    driver: bridge
+

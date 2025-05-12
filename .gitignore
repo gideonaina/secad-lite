@@ -1,0 +1,12 @@
+.DS_Store
+.ipynb_checkpoints/
+.venv/
+__pycache__/
+.env
+**.egg-info/
+.terraform/
+
+
+#Ignore vscode files except the debug config
+**/.vscode/*
+!**/.vscode/launch.json
