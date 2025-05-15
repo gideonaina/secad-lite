@@ -9,12 +9,31 @@ https://medium.com/@gideonaina/workflow-augmentation-with-multi-agent-ai-system-
 
 ## Setup
 
-### Pre-requisite
-- Install Docker
+### Pre-requisite (Required)
 
-### Optional pre-requisite
-- Install Just: If you would like to to use the Justfile receipes instead of typing out commands
-- Install pgAdmin: If you would like to see the content of the RAG
+- Install Docker (recommend v27). It comes with docker compose (minimum need is v2, v1 version will not work with this lab.
+    - Mac: https://docs.docker.com/desktop/setup/install/mac-install/
+    - Windows: https://docs.docker.com/desktop/setup/install/windows-install/ 
+    - Run docker --version  to confirm  the version of docker
+    - Run docker compose version  to confirm version of docker compose
+
+### Pre-requisite (Optional)
+
+- Install pgAdmin: This help inspect the content of the vector database
+    - Mac: https://www.pgadmin.org/download/pgadmin-4-macos/
+    - Windows: https://www.pgadmin.org/download/pgadmin-4-windows/
+
+- Just: Install this make it easier to run the necessary commands as receipes (See Justfile in the repo for details)
+    - Mac: run `brew install just`
+    - Window: 
+        * Install Scoop or Chocolatey
+        ``` 
+        Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+        Invoke-RestMethod -Uri https://get.scoop.sh | Invoke-Expression
+        ```
+        * Once installed run `scoop install just`
+- Install vscode: https://code.visualstudio.com/download
 
 ### Running SECAD
 - Create a `.env` at the root of this project and copy the content of the `.env.sample` file into it. Provide the `OPENAI_API_KEY` value. Leave the rest as default if you choose.
