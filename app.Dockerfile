@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y curl git \
 
 WORKDIR /app
 
-RUN git clone --branch hackathon --single-branch https://github.com/gideonaina/secad.git /tmp/secad/
+RUN git clone --branch dev --single-branch https://github.com/gideonaina/secad.git /tmp/secad/
 
 # Install Python dependencies first before copying the rest of the code
 RUN cp /tmp/secad/secad/pyproject.toml .
